@@ -34,4 +34,24 @@ public class DeveloperServiceImpl implements DeveloperService {
         return DEVELOPERS.stream().filter(developer -> id.equals(developer.getId())).findFirst().orElseThrow(DeveloperNotFoundException::new);
     }
 
+
+    @Override
+    public Developer createDeveloper(Developer developer) {
+        log.info("Creating Developer {}", developer);
+        Assert.notNull(developer, "Developer cannot be null");
+        Assert.notNull(developer.getId(), "Id cannot be null");
+        Assert.hasText(developer.getFirstName(), "First name cannot be blank");
+        Assert.hasText(developer.getLastName(), "Last name cannot be blank");
+
+        DEVELOPERS.add(developer);
+        return developer;
+    }
+
+
+    @Override
+    public void deleteById(Long id) {
+        log.info("Deleting Developer with Id {}", id);
+        DEVELOPERS.removeIf(developer -> id.equals(developer.getId()));
+    }
+
 }

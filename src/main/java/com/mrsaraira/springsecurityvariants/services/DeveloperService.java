@@ -10,4 +10,8 @@ public interface DeveloperService {
 
     Developer getDeveloper(Long id);
 
+    Developer createDeveloper(Developer developer);
+
+    void deleteById(Long id);
+
 }
