@@ -15,7 +15,7 @@ in the format of *Basic username:password*, where **username:password** part enc
 Enable in-memory basic authentication with pre-defined user stored in-memory using `InMemoryUserDetailsManager` to create user(admin) and a *Bcrypt* password encoder to hash the password.
 
 #### Spring Security In-Memory Auth with User roles
-This method define Roles, where Users have roles and roles can perform certain operations.
+This method define Roles, where Users has a role and can perform certain operations defined by that role.
 
 We added two more operations allowed only for users with role *Admin*: create, delete.
 Other users with role *User* only allowed to get Developers. 
