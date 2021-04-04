@@ -3,6 +3,7 @@
 
 To enable and configure security in our Spring application we first need to add `spring-boot-starter-security` dependency, next step we create a new bean with annotation `@Configuration` that extends `WebSecurityConfigurerAdapter` class, also we need to add and `@EnableWebSecurity` annotation. The `@EnableWebSecurity` is a marker annotation. It allows Spring to find (it's a @Configuration and, therefore, @Component) and automatically apply the class to the global WebSecurity.
 
+---
 ### Implementations
 #### Main
 Main branch uses **Basic auth** with default Spring security configurations. To perform login, you should enter default username - *user*
@@ -27,4 +28,8 @@ In this method we use *Authorities* which is more flexible than using only roles
 
 In Spring Security, we can think of each GrantedAuthority as an individual privilege. Examples could include READ_AUTHORITY, WRITE_PRIVILEGE, or even CAN_EXECUTE_AS_ROOT. The important thing to understand is that the name is arbitrary.
 
-When using a GrantedAuthority directly, such as through the use of an expression like hasAuthority(‘READ_AUTHORITY'), we are restricting access in a fine-grained manner. 
+When using a GrantedAuthority directly, such as through the use of an expression like hasAuthority(‘READ_AUTHORITY'), we are restricting access in a fine-grained manner.
+
+#### Spring Security In-Memory Auth with User authorities and @PreAuthorized
+ This is another convenient way of setting authority access on operation by annotating needed method in controller instead of writing **antMatchers** in `SecurityConfigs`, which could extend to tens of lines.
+ 
