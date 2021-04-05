@@ -1,4 +1,4 @@
-package com.mrsaraira.springsecurityvariants.controllers;
+package com.mrsaraira.springsecurityvariants.rest;
 
 import com.mrsaraira.springsecurityvariants.model.Developer;
 import com.mrsaraira.springsecurityvariants.services.DeveloperService;
