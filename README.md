@@ -33,7 +33,7 @@ When using a GrantedAuthority directly, such as through the use of an expression
 #### Spring Security In-Memory Auth with User authorities and @PreAuthorized
  This is another convenient way of setting authority access on operation by annotating needed method in controller instead of writing **antMatchers** in `SecurityConfigs`, which could extend to tens of lines.
  
-### Spring Security form-based auth
+#### Spring Security form-based auth
 Form-Based authentication is a way in which user's authentication is done by login form. This form is built-in and provided by spring security framework.
 
 The HttpSecurity class provide a method formLogin() which is responsible to render login form and validate user credentials. **But** we'll create our own login page based on the default one without styles. Also we're creating success redirect page after login with a logout button. 
