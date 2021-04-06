@@ -40,3 +40,7 @@ The HttpSecurity class provide a method formLogin() which is responsible to rend
 Logout is possible only by POST requests *see configurations* and that's added to the success.html.
 
 Form-based auth also uses HTTP basic auth which provides the encoded *username:password*. :)
+
+#### Spring Security form-based auth + MongoDB
+This method includes creating users in MongoDB and the configuring DaoAuthenticationProvider with our UserDetailsService implementation.
+At startup we're clearing DB and creating Users: admin and user (*see console output*) where the later is banned and cannot login.
