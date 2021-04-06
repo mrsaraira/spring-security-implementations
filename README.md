@@ -43,4 +43,4 @@ Form-based auth also uses HTTP basic auth which provides the encoded *username:p
 
 #### Spring Security form-based auth + MongoDB
 This method includes creating users in MongoDB and the configuring DaoAuthenticationProvider with our UserDetailsService implementation.
-At startup we're clearing DB and creating Users(*see console output*): admin, user, where the later is banned and cannot login.
+At startup we're clearing DB and creating Users: admin and user (*see console output*) where the later is banned and cannot login.
