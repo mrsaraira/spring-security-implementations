@@ -44,3 +44,12 @@ Form-based auth also uses HTTP basic auth which provides the encoded *username:p
 #### 7. Spring Security form-based auth + MongoDB
 This method includes creating users in MongoDB and the configuring DaoAuthenticationProvider with our UserDetailsService implementation.
 At startup we're clearing DB and creating Users: admin and user (*see console output*) where the later is banned and cannot login.
+
+#### 8. Spring Security JWT auth
+In authentication, when the user successfully logs in using their credentials, a JSON Web Token will be returned and must be saved locally (typically in local storage, but cookies can be also used), instead of the traditional approach of creating a session in the server and returning a cookie.
+
+Whenever the user wants to access a protected route or resource, the user agent should send the JWT, typically in the Authorization header using the Bearer schema. The content of the header should look like the following:
+
+`Authorization: Bearer <token>`
+
+This is a stateless authentication mechanism as the user state is never saved in server memory. The server's protected routes will check for a valid JWT in the Authorization header, and if it's present, the user will be allowed to access protected resources. As JWTs are self-contained, all the necessary information is there, reducing the need to query the database multiple times.
